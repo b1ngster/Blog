@@ -25,8 +25,6 @@
 .msbm-5{font-size:50%;}
 .cmr-17{font-size:170%;}
 .cmr-12{font-size:120%;}
-.cmtt-10{font-family: monospace,monospace;}
-.tctt-1000{font-family: monospace,monospace;}
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}
@@ -40,6 +38,15 @@ center { margin-top:1em; margin-bottom:1em; }
 td center { margin-top:0em; margin-bottom:0em; }
 .Canvas { position:relative; }
 math { text-indent: 0em; }
+body{ margin:1em auto; max-width:80ch; padding:0 .62em; }
+h1,h2,h3,h4,h5 { line-height:1.2; }
+@media print{ body{ max-width:none } }
+.partHead, likepartHead { font-size: 2em; }
+.chapterHead, likechapterHead { font-size: 1.7411em; }
+.sectionHead, likesectionHead { font-size: 1.5157em; }
+.subsectionHead, likesubsectionHead { font-size: 1.3195em; }
+.subsubsectionHead, likesubsubsectionHead { font-size: 1.1487em; }
+ @media (prefers-color-scheme: dark) { img[src^="main"]{filter: invert(1); } } 
 li p.indent { text-indent: 0em }
 li p:first-child{ margin-top:0em; }
 li p:last-child, li div:last-child { margin-bottom:0.5em; }
@@ -97,6 +104,8 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline td, .cline td{ padding: 0; }
 .hline hr, .cline hr{border:none;border-top:1px solid black;}
 .hline {border-top: 1px solid black;}
+.hline + .vspace:last-child{display:none;}
+.hline:first-child{border-bottom:1px solid black;border-top:none;}
 .tabbing-right {text-align:right;}
 div.float, div.figure {margin-left: auto; margin-right: auto;}
 div.float img {text-align:center;}
@@ -108,8 +117,11 @@ div.figure img {text-align:center;}
 td.eq-no{ width:5%; }
 table.equation { width:100%; } 
 div.math-display, div.par-math-display{text-align:center;}
-mtr.hline mtd{ border-bottom:black solid 1px; padding-top:2px; padding-bottom:0em; }
-mtr.hline mtd mo{ display:none }
+.array-hline,.array-cline{ border-top: 1px solid black; height:0px; }
+.array-hline + .array-vspace:last-child{display:none;}
+.hline-mtd, .array-hline td{ display:none }
+.array-hline + .array-row:last-child{display:none;}
+.array-hline:first-child{border-bottom:1px solid black;border-top:none;}
 math .texttt { font-family: monospace; }
 math .textit { font-style: italic; }
 math .textsl { font-style: oblique; }
@@ -120,13 +132,13 @@ mi + mo.MathClass-op{margin-left:0.3em}
  math mstyle[mathvariant="bold"] { font-weight: bold; font-style: normal; } 
  math mstyle[mathvariant="normal"] { font-weight: normal; font-style: normal; } 
 .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
-.chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;}
 .index-item, .index-subitem, .index-subsubitem {display:block}
 div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
 div.caption span.id{font-weight: bold; white-space: nowrap; }
 h1.partHead{text-align: center}
 p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
 p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1em; }
 .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
 .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
 .verse{white-space:nowrap; margin-left:2em}
@@ -146,9 +158,9 @@ p + figcaption, img + figcaption{margin-top: 1em;}
 .abstract{margin:1em;}
 .equation-star td{text-align:center; vertical-align:middle; }
 table.equation-star { width:100%; } 
+.boxed{border: 1px solid black; padding-left:2px; padding-right:2px;}
 mtd.align-odd{margin-left:2em; text-align:right;}
 mtd.align-even{margin-right:2em; text-align:left;}
-.boxed{border: 1px solid black; padding-left:2px; padding-right:2px;}
 .rotatebox{display: inline-block;}
 code.lstinline{font-family:monospace,monospace;}
 pre.listings{font-family: monospace,monospace; white-space: pre-wrap; margin-top:0.5em; margin-bottom:0.5em; }
@@ -166,9 +178,5 @@ body { font-family: Minion Pro, Baskerville, Garamond, EB Garamond, Georgia, ser
 .subsectionHead { font-size: 24px; }
 .titlemark { display: inline-block; width: 2em; }
 .figure img { display: block; margin: auto; }
-#listing-1{background-color:#000000;}
-#listing-1{border: 1px solid #000000;}
-#listing-2{background-color:#000000;}
-#listing-2{border: 1px solid #000000;}
 /* end css.sty */
 
