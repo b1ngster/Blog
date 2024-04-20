@@ -79,6 +79,35 @@
 
 
 
+\section*{20 April 2024 - \\ Taming Stochastic Parrots}
+\addcontentsline{toc}{section}{\protect\numberline{}20 April 2024 - Taming Stochastic Parrots}
+
+When using ChatGPT, it is important to specify what date you want to use. Large language Models such as ChatGPT give probabilistic output. The output differs when given the same input. This is due to the way the data is encoded and the algorithm used to extract the data, such as cosine similarity over a high-dimensional space, which gives rise to hallucinations.  
+
+A way of overcoming different outputs is possibly using conventional programming techniques of caching and hashing the output; this could offer a speed improvement and cost reduction over using ChatGPT. Using ChatGPT requires a user to pay; however, you can use open-source language models such as LLama2, but there will still be costs for hosting the models. Chatgpt gives free credit - but I think you need to pay, so I need to wait til I have more money to investigate this. There are open-source 
+
+
+
+LLM are capable of reasoning; this can be demonstrated by asking a math question without asking it to reason. It will show that it's working out and usually provides better results—referred to as Chain of Thought Prompting. Better results can be achieved via few-shot learning; give the model an example of what you are looking for. This can be achieved on OpenAI's Playground and through the chat log, where the conversation between the user and assistant can be artificially created after ChatGPT. Several more sophisticated ways of achieving this include context to large language model through RAG. Using agent frameworks such as Langchain and Autogen. 
+
+
+
+\section*{1 Feb 2024 - \\ Engineering with logic}
+\addcontentsline{toc}{section}{\protect\numberline{1 Feb 2024 - \\ Engineering with logic}}
+
+I have recently been doing a Functional Skills English class, yes my English is terrible, as it turned out, but I would like to point out that there was a fire alarm during the test, so I am doing a level one qualification. Fun is it gives me more time to enjoy learning about English. 
+
+Interestingly, it's noted that English aligns with first-order logic, documents to be digested into knowledge graphs created via subject-predicate-object triples, which comply with the RDF standard. SPO triples would be easy to extract if natural language would be easy to extract, but we don't talk in simple noun-verb-adjectives, and the words often used are ambiguous and vague.
+
+
+ When ontological modelling OntoClean provides metrics such as identity, unity, rigidity, and dependence, Welty and Andersen added two more meta-properties: permanence and actuality.
+In semantic modelling, relational considerations such as symmetry, inversion, and transitivity influence the structure of the knowledge base 
+
+
+Codd's First Normal Form closely resembles RDF triples
+Codd's algebra are the selection, the projection, the Cartesian product (also called the cross product or cross join), the set union, and the set difference.
+Appart 
+
 
 
 \section*{31 Jan 2024 - \\ New Year the same me}
@@ -113,6 +142,12 @@ While UDP does have these problems, they can be overcome using programming the c
 \end{description}
 
  A sample code which uses acknowledgement to ensure message developed C\# is provided in this these lists: \href{https://gist.github.com/b1ngster/50f5814d010b6d2cd79eec733a0d2bf1}{UPDSender} and \href{https://gist.github.com/b1ngster/50f5814d010b6d2cd79eec733a0d2bf1}{UPDReceiver}. 
+
+
+\lstinputlisting[style=csharpstyle, title={ UDPSender }]{gists/UDPMessenger/UDPSender.cs}
+
+\lstinputlisting[style=csharpstyle, title={ UDPReceiver }]{gists/UDPMessenger/UDPReceiver.cs}
+
 
 
 
