@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{blindtext}
+
+\newcommand{\click}[2]{\href{http://#1}{\colorlet{temp}{.}\color{blue}{\underline{\color{temp}#2}}\color{temp}}}  
+\newcommand{\clicks}[2]{\href{https://#1}{\colorlet{temp}{.}\color{blue}{\underline{\color{temp}#2}}\color{temp}}}  
+
+\newcommand{\cmdname}[1]{\texttt{#1}}
+\newcommand\footurl[1]{\footnote{\url{#1}}}
+\newcommand\urllink[2]{#1\footurl{#2}}
+\newcommand\foothref[3]{#1\footnote{\href{#2}{#3}}}
+\usepackage{upquote}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+\usepackage{xcolor}
+\usepackage{caption}
+
+
+%\DeclareCaptionFormat{mycaption}{#1}
+
+% Set the custom caption format for all listings
+%\captionsetup[lstlisting]{format=mycaption}
+\renewcommand{\lstlistingname}{}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
+
+\lstdefinestyle{csharpstyle}{
+    language={[Sharp]C},
+    backgroundcolor=\color{black}, % Background color of the code
+    basicstyle=\color{white}\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{orange},
+    numberstyle=\tiny\color{white}, % Font color of line numbers
+    numbers=left,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4,
+    frame=leftline,
+    framerule=2pt,
+    captionpos=t, % Position of the caption (bottom)
+    numbersep=10pt, % Space between line numbers and code
+    framexleftmargin=10pt, % Width of the line number background
+    rulecolor=\color{black}, % Color of the line separating code and line numbers
+}
+\lstset{
+    numbers=none, % Disable line numbering globally
+}
+\title{Blog}
+
+\author{B1ngster}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+
+\tableofcontents
+\newpage\cmdname{example}
+
+
+
+\newpage
+ 
+\section*{03 November 2024 - \\ I know your type! }
+\addcontentsline{toc}{section}{\protect\numberline{}03 November 2024 -  I know your type!}
+
+When Kamala Harris said, 'I know your type', about Donald Trump, made me thinking about the significance of Type theory, which is fundamental in programming languages, type-safety prevents runtime errors ensuring numbers and strings don't mix during runtime which often causes programs to crash. Type Theory is also essential in SMT (Satisfiability Modulo Theories) and SAT (Boolean Satisfiability) solving, which are used in formal verification and proof assistants.  The Curry-Howard correspondence establishes a connection between logic and computation giving a path towards high-assurance software. Formal verification uses automatic proof procedures to ensure a computer program works correctly. 
+
+Boris Beizer, in his seminal work Software Testing Techniques (ITC Press 1990), highlights that not testing a piece of code leaves a residue of bugs in the program proportional to the size of the untested code. He states that logic errors and fuzzy thinking are inversely proportional to the probability of the path’s execution. But testing can only validate code against a set of concrete inputs, formal proof can assure that the code is both secure and correct forDETR all possible inputs
+
+Earlier this year, Alphaproof by Google's Deep Mind was used in the International Mathematical Olympiad (IMO) 2024 winning a silver medal using techniques, such as reinforcement learning and neuro-symbolic learning.  It is powered by Lean, a proof-oriented programming language that allows for proofs involving mathematical reasoning to be formally verified for correctness, its comprehensive Mathlib package codifies math problems and how to solve them. The language is powered by the calculus of constructs which differs from simple lambada calculus. It supports dependent types, they depend on terms or values, for example, a type that represents "vectors of length n", where n is a term, allowing specifications to be written in the code. 
+
+Statically typed programming languages like C,  C\#, Java and Rust produce faster programs as the compiler does the checks during compilation, making checks unnecessary during runtime, however, there are some exceptions such as arrays. Dynamically typed programming languages such as JavaScript and Python do their type checking during run time. A weak type system allows convention between types, including languages like C and JavaScript. In a Strong typing system, different types don't mix, these include languages like Java and Rust. Programming languages such as liquidHaskel and Liquid C enhance the expressiveness of their type system by incorporating more complex types, such as refinement types which use predicates for more precise type checking and to ensure stronger guarantees.
+ 
+Racket uses the functional paradigm, which promotes pure functions and immutability, facilitating Referential transparency and simplifying formal verification and reasoning about code, making it easier to prove correctness. Program synthesis is a cornerstone of AI, where logical reasoning can deduce the functions needed to produce desired outputs.  Rosette is a solver-aided programming language that extends Racket. It allows users to write programs that mix concrete codeDETR with specifications and uses solvers to generate programs that meet those specifications. By using assertions specify the desired properties of the program.
+
+In proof-oriented programming languages, assertions are an obligation to detect and prevent errors by verifying that certain conditions hold during DETR execution. Most programming languages support assertions; they enable Unit tests. It is recommended not to rely on them in production code for exception handling, as they may be turned off in production environments. Assertions can be made about metrics such as space and time complexity using separation logic and linear logic to prove properties about resource usage. 
+
+Hoare logic, developed by C.A.R. Hoare in 1969, is the basis of many automated program verification tools and techniques. A set of inference rules that capture the semantics of different program constructs, such as assignments, sequences, conditionals, and loops. By applying these rules, the verification of individual statements is chained together to prove the correctness of the entire program. 
+
+The core of Hoare logic is the "Hoare triple": {P} C {Q}. Where P:  is the precondition –  the program's state before the code (C) executes.  C: represents the computation.  Q: This is the post-condition – the program's state after executing the computation.  Invariants are conditions that remain true throughout the execution of a program. Similarly, in a presidency, some conditions might remain invariant during the term. For instance, certain legal frameworks, constitutional limitations, or demographic trends may not change. An invariant for a presidency might be: "The country remains a democracy with peaceful transitions of power." 
+
+Backward reasoning starts with the post-condition working backwards through the code to find the weakest precondition. It is suitable for finding the necessary conditions for a program to achieve a specific goal, such as program synthesis and identifying potential errors or missing conditions in the code.  Forward reasoning provides a structured way to analyze how a program transforms its initial state into the final state.  It detects errors confirming the program's correctness by checking it meets its specification for all possible inputs satisfying the precondition. To verify a recursive function, the base case should be identified and a proof technique such as mathematical or structural induction (which is best suited to graphs and trees.
+
+Hoare logic is designed to reason over flowcharts and  other systems, such as business systems. In the mid-1950s, Grace Hooper developed FLOW-MATIC, originally called B-0 (Business Language version 0), a precursor of COBOL, one of the first high-level programming languages. The first person to write a compiler David Wheeler of Cambridge University but this was for machine-specific “auto code”. He was also the Ph.D. thesis adviser of Bjarne Stroustrup, the inventor of C++. 
+
+There were other high-level programming languages such as Lisp developed in 1958 by John McCarthy it was inspired by lambda calculus, it was run as an interpreted language FORTRAN is considered the first high-level programming language. John Backus led the development of FORTRAN, which allows programmers to write complex mathematical computations in a human-readable language merged (after the initial Fortran) was a notation for specifying grammars: the Backus-Naur Form (BNF) later implemented in  Algol60. 
+
+There are various methods for proving the correctness of programs Bertrand Meyer’s Design by Contract, developed in the 1980's, implemented in the Eiffel programming language which similarly uses preconditions, post-conditions, and invariants referred to as class invariants.  Racket also offers support  through its contract system,  and major programming like C++,  Java, Python and PHP, have libraries and frameworks that can be used to implement DbC.
+
+De Bruijn Theorem highlights that writing informal proofs as formal proofs is more time-consuming they significantly longer than their informal counterparts—sometimes by a factor of four or more. This increased complexity makes writing formal proofs more time-consuming and highlights the trade-off between the rigour of formal verification and the practicality of software development timelines.  Rice's theory recognises the limits of formal verification and static analyses: any non-trivial semantic property of programs is undecidable.  Specific semantic properties and subroutines can still be verified, giving us powerful tools to ensure correctness. 
+
+Everest project brings together several research projects verifying protocols such as TLS 1.2 and 1.3, and the automated prover Z3. They use F/* a formal verification language therefore mathematically proving that their code satisfies certain properties, such as memory safety, functional correctness, or security guarantees, with the specification written within the code. 
+
+Proving the correctness of a program involves writing a higher-order specification in a language  TLA+ (Temporal Logic of Actions) a formal specification language based on set theory, first-order and temporal logic.  TLA+ is used to model and reason about concurrent and distributed systems, allowing developers to specify system behaviours and verify correctness properties.  Alloy is an alternative formal specification language better suited for modelling structured programs and relational databases. These methods are not exhaustive as formal verification but do ensure the the design is free from errors. 
+
+What I find exciting about this is that it can be exported to WebAssembly which can be used with other languages such as Rust and JavaScript that also can be exported into WebAssembly creating a robust architecture. While mathematical proofs provide strong assurances about code correctness, they cannot fully encompass human factors such as usability, ethical considerations, and user experience. formal verification with user-centered design. They can facilitate technically sound building systems which provide a great user experience.
+
+Computer programs often operate as subsystems across multiple dimensions and timescales, involving complex, non-linear feedback loops that make them challenging to fully understand. However, by reasoning over individual components, it's possible to prove the properties of the system as a whole. Using formal languages to define and verify every aspect of a system may be excessive, but for critical elements—like blockchain and cryptocurrency—it is essential. 
+
+Unfortunately, you cannot reason over a presidency as easily as a computer program cos the effects of policies take time. Donald Trump as a person has alleged to have done some deplorable acts, whereas Kamala Harris has validated career in law and politics. Indeed this is not a recursive function of Kamala Harris because she has only ever functioned as a Vice President.  I like her type its the hopeful type, the type of person I would like running the country.  
+
+Types often hang around together, it is well known that Donald Trump has had conversations with Vladimir Putin, and Elon Musk has had conversations with Putin. Perhaps they are making an evil network, but that's yet to be proven.
+
+
+
+
+ \end{document}
